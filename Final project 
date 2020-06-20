@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Web App</title>
+ 
+    
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <link href="../static/signup.css" rel="stylesheet">
+    
+  </head>
+
+  sudo apt-get install python3-venv    # If needed
+python3 -m venv env
+ 
+  <body>
+ 
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" ><a href="main">Home</a></li>
+            <li role="presentation"><a href="#">Sign In</a></li>
+            <li role="presentation" class="active"><a href="#">Sign Up</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-off">Web App</h3>
+      </div>
+ 
+      <div class="jumbotron">
+        <h1>brainstorm App</h1>
+        <form class="form-signin">
+        <label for="inputName" class="sr-only">Name</label>
+        <input type="name" name="inputName" id="inputName" class="form-control" placeholder="Name" required autofocus>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required>
+         
+        <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Sign up</button>
+      </form>
+      </div>
+ 
+       
+ 
+      <footer class="footer">
+        <p>&copy; Company 2018</p>
+      </footer>
+ 
+    </div>
+  </body>
+</html>
+
+
+
+django-admin startproject finalproject /Users/jezdez/Code/finalproject_repo
+django-admin startapp --=https://github.com/githubuser/brainstorm/archive/master.zip myapp
+django-admin testserver mydata.com
+django-admin createpassword ringo
+BEGIN;
+CREATE TABLE "polls_choice" (
+    "id" serial NOT NULL PRIMARY KEY,
+    "choice_text" varchar(200) NOT NULL,
+    "survey" integer NOT NULL
+);
+CREATE TABLE "polls_question" (
+    "id" serial NOT NULL PRIMARY KEY,
+    "question_text" varchar(200) NOT NULL,
+    "pub_date" timestamp with time zone NOT NULL
+);
+ALTER TABLE "polls_choice" ADD COLUMN "question_id" integer NOT NULL;
+ALTER TABLE "polls_choice" ALTER COLUMN "question_id" DROP DEFAULT;
+CREATE INDEX "polls_choice_7aa0f6ee" ON "polls_choice" ("question_id");
+ALTER TABLE "polls_choice"
+  ADD CONSTRAINT "polls_choice_question_id_246c99a640fbbd72_fk_polls_question_id"
+    FOREIGN KEY ("question_id")
+    REFERENCES "polls_question" ("id")
+    DEFERRABLE INITIALLY DEFERRED;
+
+COMMIT;
+>> import http.client
+>>> conn = http.client.HTTPSConnection("guestserver", 8080)
+>>> conn.set_tunnel("www.python.org")
+>>> conn.request("HEAD","/index.html")
+
+>>> import http.client
+>>> con = http.client.HTTPSConnection("www.python.org")
+>>> con.request("GET", "/")
+>>> r1 = con.getresponse()
+>>> print(r1.status, r1.reason)
+200 OK
+>>> data1 = r1.read()  # This will return entire content.
+>>> # The following example demonstrates reading data in chunks.
+>>> con.request("GET", "/")
+>>> r1 = con.getresponse()
+>>> while not r1.closed:
+...     print(r1.read(200))  # 200 bytes
+b'<!doctype html>\n<!--[if"...
+...
+>>> # Example of an invalid request
+>>> con.request("GET", "/parrot.spam")
+>>> r2 = con.getresponse()
+>>> print(r2.status, r2.reason)
+404 Not Found
+>>> data2 = r2.read()
+>>> con.close()
+
+from django.urls import path
+from . import views
+
+
+app_name = 'brainstorm'  # here for namespacing of urls.
+
+urlpatterns = [
+    path("", views.homepage, name="homepage"),
+    path("signup/", views.register, name="register"),
+    path("logout", views.logout_request, name="logout"),
+]
+
+<h2>Contact Us</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit" />
+    f contact_us(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # send email code 1234
+            return HttpResponse('Thanks for contacting us!\n')
+    else:
+        form = ContactForm()
+
+    return render(request, 'brainstorm/contact-us.html', {'form': form})
+</form>

@@ -1,0 +1,93 @@
+!DOCTYPE
+<html>
+<form action="/action_page.php" method="get" name="myForm">
+  <label for="dname">Display name:</label>
+  <input type="text" id="dname" name="dname"><br><br>
+
+  <nav>
+  <ul>
+    <li><a href="#">Navigation</a></li>
+    <li><a href="#">Menu</a></li>
+    <li><a href="#">New Channels</a></li>
+  </ul>
+</nav>
+
+
+
+
+
+  <ol>
+  <li>CNN</li>
+  <li>Disney</li>
+  <li>Nickeoldeon</li>
+</ol>
+
+/* The alert message box */
+.alert {
+  padding: 30px;
+  background-color: blue
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* The close button */
+.closebtn {
+  margin-left: 16px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 25px;
+  line-height: 22px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: red;
+}
+<form method="post" action="contact.php">
+    <p>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" />
+    </p>
+    <p>
+        <label for="message">Message</label>
+        <input type="text" id="message" name="message" />
+    </p>
+    <p>
+        <label for="Email">Email</label>
+        <textarea id="email" name="email" rows="4" cols="20"></textarea>
+    </p>
+    <p>
+        <input type="submit" name="send" value="Send message" />
+    </p>
+</form>
+var x = document.getElementsByTagName("P");
+// Returns a collection of all the channels in the document
+<!DOCTYPE HTML>
+<html>
+<head> 
+    <title>Attach file</title>
+</head>
+
+<body>
+    <table width="550px">
+        <tr>
+            <td valign="top">
+                <label for="attach_file"><b>Attachment *</b></label>
+                @media only screen and (max-width: 700px) {
+  body {
+    background-color: blue;
+  }
+}
+            </td>
+            <td valign="top">
+                <input type="submit" value="Attach File">
+            </td>
+            <td valign="top">
+                <label for="attach_file">No file selected</label>
+            </td>
+        </tr>
+
+

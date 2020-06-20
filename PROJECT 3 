@@ -1,0 +1,164 @@
+<!DOCTYPE>
+<html>
+<div class="menu" onclick="myFunction(this)">
+  <div class="cheesepizza"></div>
+  <div class="sicilian"></div>
+  <div class="italiansub"></div>
+  <div class="cheesesub"></div>
+  <div class="ham+cheese"></div>
+  <div class="meatball"></div>
+  <div class="tuna"></div>
+  <div class="turkey'></div>
+  <div class="chickenparmigiana"></div>
+  <div class="eggplantparmigiana"></div>
+  <div class="steak"></div>
+  <div class="steak+cheese"></div>
+  <div class="sausage,peppers,onions"></div>
+  <div class="hamburger"></div>
+  <div class="cheeseburger"></div>
+  <div class="friedchicken"></div>
+  <div class="veggie"></div>
+  <div class="toppings"></div>
+  <div class="baked ziti w/ mozzarella,meatballs,chicken"></div>
+  <div class="gardensalad"></div>
+  <div class="greeksalad"></div>
+  <div class="antipasto"></div>
+   <div class="salad w/ tuna"></div>
+  <div class="dinnerplatters"></div>
+</div>
+<div class="subnav">
+    <button class="subnavbtn">Adding items <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="#add">Add</a>
+      <a href="#change">Change</a>
+      <a href="#toppings">Toppings</a>
+      <a href="#newitem">NewItem</a>
+    </div>
+    <form action="action_page.php">
+  <div class="Pizza Place">
+    <h1>Register</h1>
+    <p>Please fill in the boxes to create an account.</p>
+    <hr>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+    <hr>
+
+    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+    <button type="submit" class="registerbtn">Register</button>
+  </div>
+
+  <div class="container signin">
+    <p>Already have an account? <a href="#">Sign in</a>.</p>
+  </div>
+</form>
+<form name="ShoppingList">
+    <fieldset>
+        <legend>Shopping cart</legend>
+        <label>Item: <input type="text" name="name"></label>
+        <label>Quantity: <input type="text" name="data"></label>
+
+        <input type="button" value="Add"   onclick="AddItem()">
+        <input type="button" value="Update" onclick="ModifyItem()">
+        <input type="button" value="Delete" onclick="RemoveItem()">
+    </fieldset>
+    <div id="items_table">
+        <h2>Shopping List</h2>
+        <table id="list"></table>
+        <label><input type="button" value="Clear" onclick="ClearAll()">
+        * Delete all items</label>
+    </div>
+</form>
+<div class="row">
+  <div class="col-50">
+    <div class="Pizza">
+      <form action="/action_page.php">
+
+        <div class="row">
+          <div class="col-75">
+            <h3>Billing Address</h3>
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Shawn Mendes">
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="shawn@example.com">
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+            <input type="text" id="adr" name="address" placeholder="123 W. 16th Street">
+            <label for="city"><i class="fa fa-institution"></i> City</label>
+            <input type="text" id="city" name="city" placeholder="Chicago">
+
+            <div class="row">
+              <div class="col-75">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" placeholder="CO">
+              </div>
+              <div class="col-75">
+                <label for="zip">Zip</label>
+                <input type="text" id="zip" name="zip" placeholder="10201">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-75">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:yellow;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" placeholder="Shawn Mendes">
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2234-3333-5555">
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="November">
+
+            <div class="row">
+              <div class="col-75">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear" placeholder="2021">
+              </div>
+              <div class="col-75">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="234">
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <label>
+          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+        </label>
+        <input type="submit" value="Continue to checkout" class="btn">
+      </form>
+    </div>
+  </div>
+
+  <div class="col-30">
+    <div class="container">
+      <h4>Cart 
+        <span class="price" style="color:white">
+          <i class="fa fa-shopping-cart"></i> 
+          <b>4</b>
+        </span>
+      </h4>
+      <p><a href="#">Item 1</a> <span class="price">$15</span></p>
+      <p><a href="#">Item 2</a> <span class="price">$5</span></p>
+      <p><a href="#">Item 3</a> <span class="price">$8</span></p>
+      <p><a href="#">Item 4</a> <span class="price">$2</span></p>
+      <hr>
+      <p>Total <span class="price" style="color:black"><b>$45</b></span></p>
+    </div>
+  </div>
+</div>
+<details>
+  <summary>Pizza Order</summary>
+  <p>Thank you for ordering with us! The final order price is 45 dollars. It will be ready for you in 30-45 minutes</p>
+</details>
